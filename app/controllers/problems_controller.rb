@@ -6,10 +6,23 @@ class ProblemsController < ApplicationController
   end
 
   def create
-    render plain: params[:problem].inspect
+    #render plain: params[:problem].inspect
+    #@problem = Problem.new(problem_params)
+    #@problem.save
+    #redirect_to problems_show(@problem)
     @problem = Problem.new(problem_params)
-    @problem.save
-    redirect_to problems_show(@problem)
+    if @problem.save
+      #do something
+      flash[:notice] = "Problem was successfully created"
+      redirect_to problem_path(@problem)
+    else 
+      render 'new'
+
+    end
+  end
+
+  def show
+    @problem = Problem.find(params[:id])
   end
 
   private

@@ -1,5 +1,14 @@
 <h1>Share a solution to a problem</h1>
 
+<% if @problem.errors.any? %>
+<h2> The following errors prevented the problem from getting created</h2>
+<ul>
+  <% @problem.errors.full_messages.each do |msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+
 <%= form_for @problem do |f| %>
   
   <p>
