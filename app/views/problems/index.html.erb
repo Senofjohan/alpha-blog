@@ -1,0 +1,21 @@
+<h1>Listing all Problems</h1>
+
+<p>
+<%= link_to "Solve a new problem", new_problem_path %>
+</p>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+
+  <% @problems.each do |problem| %>
+  <tr>
+    <td><%= problem.title %></td>
+    <td><%= problem.description %></td>
+    <td><%= link_to 'Edit', edit_problem_path(problem) %></td>
+    <td><%= link_to 'Show', problem_path(problem) %></td>
+  </tr>
+  <% end %>
+</table>

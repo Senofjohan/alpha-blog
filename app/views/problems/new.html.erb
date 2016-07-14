@@ -1,12 +1,12 @@
-<h1>Share a solution to a problem</h1>
+<h1>What solution do your bring for everyone?</h1>
 
 <% if @problem.errors.any? %>
-<h2> The following errors prevented the problem from getting created</h2>
-<ul>
-  <% @problem.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
-  <% end %>
-</ul>
+  <h2> The following errors prevented the problem from getting created</h2>
+  <ul>
+    <% @problem.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
 <% end %>
 
 <%= form_for @problem do |f| %>
@@ -25,3 +25,5 @@
   </p>
 
 <% end %>
+
+<%= link_to "Back to problems listing", problems_path %>

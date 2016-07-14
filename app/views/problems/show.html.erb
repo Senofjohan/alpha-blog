@@ -6,3 +6,6 @@
 <p> 
   Description: <%= @problem.description %>
 </p>
+
+<%= link_to "Edit this article", edit_problem_path(@problem) %> |
+<%= link_to "Back to problems listing", problems_path %>

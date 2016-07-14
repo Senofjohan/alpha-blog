@@ -1,12 +1,12 @@
-<h1>Edit existing problem</h1>
+<h1>Refine wording of a Problem</h1>
 
 <% if @problem.errors.any? %>
-<h2> The following errors prevented the problem from getting created</h2>
-<ul>
+  <h2> The following errors prevented the problem from getting created</h2>
+  <ul>
   <% @problem.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
+    <li><%= msg %></li>
   <% end %>
-</ul>
+  </ul>
 <% end %>
 
 <%= form_for @problem do |f| %>
@@ -25,3 +25,5 @@
   </p>
 
 <% end %>
+
+<%= link_to "Back to problems listing", problems_path %>
