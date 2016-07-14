@@ -1,4 +1,5 @@
 class ProblemsController < ApplicationController
+  before_action :set_problem, only: [:edit, :update, :show, :destroy]
 
   def index
     @problems = Problem.all
@@ -9,7 +10,6 @@ class ProblemsController < ApplicationController
   end
 
   def edit
-    @problem = Problem.find(params[:id])
   end
 
   def create
@@ -24,7 +24,6 @@ class ProblemsController < ApplicationController
   end
 
   def update
-    @problem = Problem.find(params[:id])
     if @problem.update(problem_params)
       flash[:notice] = "Problem was successfully updated"
       redirect_to problem_path(@problem)
@@ -34,18 +33,19 @@ class ProblemsController < ApplicationController
   end
 
   def show
-    @problem = Problem.find(params[:id])
   end
 
 
   def destroy
-    @problem = Problem.find(params[:id])
     @problem.destroy
     flash[:notice] = "The problem is no longer a problem"
     redirect_to problems_path
   end
 
   private
+    def set_problem
+      @problem = Problem.find(params[:id])
+    end
     #white lists problems class
     def problem_params
       params.require(:problem).permit(:title, :description)
