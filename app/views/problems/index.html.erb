@@ -16,6 +16,7 @@
     <td><%= problem.description %></td>
     <td><%= link_to 'Edit', edit_problem_path(problem) %></td>
     <td><%= link_to 'Show', problem_path(problem) %></td>
+    <td><%= link_to 'Delete', problem_path(problem), method: :delete, data: {confirm: "Are you sure the problem is no longer of concern?"} %></td>
   </tr>
   <% end %>
 </table>

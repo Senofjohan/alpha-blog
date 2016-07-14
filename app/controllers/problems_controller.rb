@@ -20,12 +20,7 @@ class ProblemsController < ApplicationController
       redirect_to problem_path(@problem)
     else 
       render 'new'
-
     end
-  end
-
-  def show
-    @problem = Problem.find(params[:id])
   end
 
   def update
@@ -36,6 +31,18 @@ class ProblemsController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def show
+    @problem = Problem.find(params[:id])
+  end
+
+
+  def destroy
+    @problem = Problem.find(params[:id])
+    @problem.destroy
+    flash[:notice] = "The problem is no longer a problem"
+    redirect_to problems_path
   end
 
   private
