@@ -1,4 +1,8 @@
-$navbar-default-bg: #08088A;
+$navbar-default-bg: #94bc63;
+
+body {
+  background-color: #806641 !important;
+}
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -15,4 +19,23 @@ $navbar-default-bg: #08088A;
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+  color: #fff;
+  text-align: center;
+  background-image: asset-url('climber_ggb.jpg');
+  background-size: cover;
+  height: 550px;
+  margin-bottom: 30px;
+  letter-spacing: -1px;
+  font-weight: bold;
+}
+
+.btn-xlarge {
+  font-size: 1.7em;
 }
