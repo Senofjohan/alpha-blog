@@ -16,7 +16,7 @@ class ProblemsController < ApplicationController
     @problem = Problem.new(problem_params)
     if @problem.save
       #do something
-      flash[:notice] = "Problem was brought into awareness... and our database"
+      flash[:success] = "Problem was brought into awareness... and our database"
       redirect_to problem_path(@problem)
     else 
       render 'new'
@@ -25,7 +25,7 @@ class ProblemsController < ApplicationController
 
   def update
     if @problem.update(problem_params)
-      flash[:notice] = "Problem was successfully updated"
+      flash[:success] = "Problem was successfully updated"
       redirect_to problem_path(@problem)
     else
       render 'edit'
@@ -38,7 +38,7 @@ class ProblemsController < ApplicationController
 
   def destroy
     @problem.destroy
-    flash[:notice] = "The problem is no longer a problem"
+    flash[:danger] = "The problem is no longer a problem"
     redirect_to problems_path
   end
 

@@ -1,11 +1,4 @@
-<% if @problem.errors.any? %>
-  <h2> The following errors prevented the problem from getting created</h2>
-  <ul>
-    <% @problem.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render 'shared/errors', obj: @problem %>
 
 <div class='row'>
   <div class='col-xs-12'>
@@ -22,12 +15,14 @@
       <div class="control-label col-sm-2">
         <%= f.label :description %>
       </div>
+      <br>
       <div class="col-sm-8">
-        <%= f.text_area :description, rows: 10, class: "form-control", placeholder: "Body of problem" %>
+        <%= f.text_area :description, rows: 8, class: "form-control", placeholder: "Body of problem" %>
       </div>
     </div>
+    <br>
     <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
+      <div class="col-sm-offset-5 col-sm-8" id="submitButton">
         <%= f.submit class: 'btn btn-primary btn-lg' %>
       </div>
     </div>
