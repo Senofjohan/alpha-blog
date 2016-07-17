@@ -36,13 +36,24 @@ $navbar-default-bg: #94bc63;
   font-size: 1.7em;
 }
 
-.article-actions {
+.problem-actions {
   border-top: 1px solid #eaeaea;
   padding-top: 5px;
 }
 
 .description {
   margin-top: 0;
+}
+
+.problem-title {
+  font-weight: bold;
+  font-size: 1.5em;
+}
+
+.problem-body {
+  border-top: 1px solid #eaeaea;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 footer {
