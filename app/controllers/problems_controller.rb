@@ -14,6 +14,7 @@ class ProblemsController < ApplicationController
 
   def create
     @problem = Problem.new(problem_params)
+    @problem.user = User.first
     if @problem.save
       #do something
       flash[:success] = "Problem was brought into awareness... and our database"
