@@ -32,6 +32,11 @@ $navbar-default-bg: #94bc63;
   font-weight: bold;
 }
 
+.column {
+  display:inline-block;
+  width: 45%;
+}
+
 .btn-xlarge {
   font-size: 1.7em;
 }
@@ -43,6 +48,9 @@ $navbar-default-bg: #94bc63;
 
 .description {
   margin-top: 0;
+}
+#joinUs {
+  min-width: 400px;
 }
 
 .problem-title {
