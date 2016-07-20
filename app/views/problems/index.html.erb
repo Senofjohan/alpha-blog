@@ -9,6 +9,11 @@
         </div>
         <div class="problem-body">
           <%= truncate(problem.description, length: 100) %>
+          <div class="problem-meta-details">
+            <small>Created by: <%= problem.user.username %>,
+                  <%= time_ago_in_words(problem.created_at) %> ago, 
+                  last updated: <%= time_ago_in_words(problem.updated_at) %> ago </small>
+          </div>
         </div>
         <div class="problem-actions">
           <%= link_to "Edit this problem", edit_problem_path(problem), class: "btn btn-xs btn-primary" %>

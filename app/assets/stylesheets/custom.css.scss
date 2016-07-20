@@ -41,6 +41,11 @@ $navbar-default-bg: #94bc63;
   font-size: 1.7em;
 }
 
+.problem-meta-details {
+  border-top: 1px solid #eaeaea;
+  margin-top: 15px;
+}
+
 .problem-actions {
   border-top: 1px solid #eaeaea;
   padding-top: 5px;
@@ -49,6 +54,7 @@ $navbar-default-bg: #94bc63;
 .description {
   margin-top: 0;
 }
+
 #joinUs {
   min-width: 400px;
 }
