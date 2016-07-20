@@ -5,7 +5,7 @@
   <%= form_for(@problem, :html => {class: "form-horizontal", role: "form"}) do |f| %>
     <div class="form-group">
       <div class="control-label col-sm-2">
-        <%= f.label :title %><br/>
+        <%= f.label :title %>
       </div>
       <div class="col-sm-8">
         <%= f.text_field :title, class: "form-control", placeholder: "Title of problem", autofocus: true %>
@@ -15,12 +15,10 @@
       <div class="control-label col-sm-2">
         <%= f.label :description %>
       </div>
-      <br>
       <div class="col-sm-8">
         <%= f.text_area :description, rows: 8, class: "form-control", placeholder: "Body of problem" %>
       </div>
     </div>
-    <br>
     <div class="form-group">
       <div class="col-sm-offset-5 col-sm-8" id="submitButton">
         <%= f.submit class: 'btn btn-primary btn-lg' %>
