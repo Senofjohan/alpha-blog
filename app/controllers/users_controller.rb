@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   end
 
   def index
-    @users = User.all
+    @users = User.paginate(page: params[:page], per_page: 5)
   end
 
   def update
@@ -33,6 +33,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @user_problems = @user.problems.paginate(page: params[:page], per_page: 5)
   end
 
   private
