@@ -55,7 +55,7 @@ class ProblemsController < ApplicationController
     end
 
     def require_same_user
-      if current_user != @problem.user
+      if current_user != @problem.user and !current_user.admin?
         flash[:danger] = "You can only edit or delete your own problems"
       end
     end

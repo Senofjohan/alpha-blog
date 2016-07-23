@@ -20,7 +20,7 @@
   <hr>
   <%= simple_format(@problem.description) %>
   <div class="problem-actions">
-    <% if logged_in? && current_user == @problem.user %>
+    <% if logged_in? && (current_user == @problem.user || current_user.admin?) %>
       <%= link_to "Edit this problem", edit_problem_path(@problem), class: "btn btn-xs btn-primary" %>
       <%= link_to "Delete this problem", problem_path(@problem), method: :delete, 
                                         data: { confirm: "Are you sure the problem is no longer of concern?"}, 

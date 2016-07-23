@@ -13,7 +13,7 @@
                   last updated: <%= time_ago_in_words(problem.updated_at) %> ago </small>
           </div>
         </div>
-        <% if logged_in? && current_user == problem.user %>
+        <% if logged_in? && (current_user == problem.user || current_user.admin?) %>
           <div class="problem-actions">
             <%= link_to "Edit this problem", edit_problem_path(problem), class: "btn btn-xs btn-primary" %>
             <%= link_to "Delete this problem", problem_path(problem), method: :delete, 
