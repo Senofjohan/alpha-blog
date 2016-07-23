@@ -13,12 +13,14 @@
                   last updated: <%= time_ago_in_words(problem.updated_at) %> ago </small>
           </div>
         </div>
-        <div class="problem-actions">
-          <%= link_to "Edit this problem", edit_problem_path(problem), class: "btn btn-xs btn-primary" %>
-          <%= link_to "Delete this problem", problem_path(problem), method: :delete, 
-                                      data: { confirm: "Are you sure the problem is no longer of concern?"}, 
-                                      class: "btn btn-xs btn-danger" %>
-        </div>
+        <% if logged_in? && current_user == problem.user %>
+          <div class="problem-actions">
+            <%= link_to "Edit this problem", edit_problem_path(problem), class: "btn btn-xs btn-primary" %>
+            <%= link_to "Delete this problem", problem_path(problem), method: :delete, 
+                                        data: { confirm: "Are you sure the problem is no longer of concern?"}, 
+                                        class: "btn btn-xs btn-danger" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
