@@ -13,6 +13,9 @@
                   last updated: <%= time_ago_in_words(problem.updated_at) %> ago </small>
           </div>
         </div>
+        <% if problem.categories.any? %>
+          <p>Categories: <%= render problem.categories %></p>
+        <% end %>
         <% if logged_in? && (current_user == problem.user || current_user.admin?) %>
           <div class="problem-actions">
             <%= link_to "Edit this problem", edit_problem_path(problem), class: "btn btn-xs btn-primary" %>

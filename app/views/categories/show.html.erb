@@ -1,0 +1,9 @@
+<h1 align="center"><%= "Category: " + @category.name %></h1>
+<div align="center">
+  <%= will_paginate @category_problems %>
+</div>
+<!-- For this partial pass in problems as obj -->
+<%= render 'problems/problem', obj: @category_problems %>
+<div align="center">
+  <%= will_paginate @category_problems %>
+</div>

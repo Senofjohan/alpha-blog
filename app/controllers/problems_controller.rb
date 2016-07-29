@@ -51,7 +51,7 @@ class ProblemsController < ApplicationController
     end
     #white lists problems class
     def problem_params
-      params.require(:problem).permit(:title, :description)
+      params.require(:problem).permit(:title, :description, category_ids: [])
     end
 
     def require_same_user
